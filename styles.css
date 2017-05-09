@@ -1,0 +1,44 @@
+input {
+	border-radius: 21px 0 0 0;
+    width: 100%;
+    font-size: 4em;
+    border: 3px solid green;
+    text-align: center;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.numPad {
+	border: 2px solid red;
+	border-radius: 21px 0 0 0;
+	width: 20vw;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+
+
+.numPad .actions {
+	display: flex;
+	justify-content: space-around;
+	margin-top: .5em;
+	padding: .5em;
+	font-size: 2em;
+} 
+
+.numPad ul {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.numPad li {
+	display: flex;
+    justify-content: center;
+	width: 30%;
+}
