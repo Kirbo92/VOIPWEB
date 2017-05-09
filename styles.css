@@ -1,9 +1,12 @@
 input {
+	background: gray;
+	border: 0;
+    color: white;
 	border-radius: 21px 0 0 0;
     width: 100%;
     font-size: 4em;
-    border: 3px solid green;
     text-align: center;
+    outline: 0;
 }
 
 ul {
@@ -13,9 +16,10 @@ ul {
 }
 
 .numPad {
-	border: 2px solid red;
+	background: #eee;
+	/*border: 2px solid red;*/
 	border-radius: 21px 0 0 0;
-	width: 20vw;
+	width: 25vw;
 	position: absolute;
 	bottom: 0;
 	right: 0;

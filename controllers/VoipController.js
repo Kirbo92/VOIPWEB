@@ -4,6 +4,8 @@
 
     .controller('VoipController', ['$timeout', '$rootScope', '$scope', function ($timeout, $rootScope, $scope) {
         
+        $scope.receive = true;
+        var session;
         var serverIP = '10.1.200.4';
         var localExtension = '351';
         var passExtension = 'password351';
@@ -42,21 +44,27 @@
             session = ua.invite(numero, options);
         }
 
-        $scope.colgar = function (session) {
+        $scope.hangup = function (session) {
             session.on('bye');
+        }
+
+        $scope.receive = function (session) {
+            session.accept();
         }
 
 
         //UA escuchando eventos
         ua.on('invite', function (session) {
+            console.log(session)
             alert('Te están llamando');
             $scope.receive = true;
-            //session.accept();
+
+            session.on('bye', function (session) {
+                alert('Colgado con exito')
+            })
         })
 
-        ua.on('bye', function (session) {
-            alert('Colgado con exito')
-        })
+        
 
     }])
 })();
